@@ -1,5 +1,6 @@
 package th.ac.ku.atm.controller;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import th.ac.ku.atm.data.CustomerRepository;
 import th.ac.ku.atm.model.Customer;
@@ -28,7 +29,11 @@ public class CustomerService {
     }
 
     public Customer findCustomer(int id){
-        return repository.findById(id);
+        try {
+            return repository.findById(id);
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
     }
 
     public Customer checkPin(Customer inputCustomer){

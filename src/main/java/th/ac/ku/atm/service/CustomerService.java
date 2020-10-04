@@ -1,4 +1,4 @@
-package th.ac.ku.atm.controller;
+package th.ac.ku.atm.service;
 
 
 import org.springframework.stereotype.Service;

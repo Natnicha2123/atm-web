@@ -54,7 +54,12 @@
             <td>
                 <a class="btn btn-primary"
                    th:href="@{/bankaccount/edit/{id}(id=${bankaccount.id})}">Edit</a>
+
+                <a class="btn btn-danger"
+                   th:href="@{/bankaccount/delete/{id}(id=${bankaccount.id})}">Delete</a>
+
             </td>
+
         </tr>
         </tbody>
 

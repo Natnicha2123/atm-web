@@ -46,6 +46,13 @@ public class BankAccountController {
         return "redirect:/bankaccount";
     }
 
+    @GetMapping("/delete/{id}")
+    public String deleteBankAccount(@PathVariable int id,Model model){
+        bankAccountService.deleteBankAccount(id);
+        model.addAttribute("allBankAccounts",bankAccountService.getBankAccounts());
+        return "redirect:/bankaccount";
+    }
+
 
 
 }
